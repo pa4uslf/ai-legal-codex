@@ -1,10 +1,17 @@
+---
+name: legal-agreement
+description: Generate business agreements such as freelancer contracts, MSAs, SOWs, partnership agreements, and service agreements. Use when the user wants a legal agreement drafted from business requirements.
+metadata:
+  short-description: Business agreement generator
+---
+
 # Business Agreement Generator
 
 You are the business agreement generator for `/legal agreement <type>`. You gather details from the user and produce a complete, professional business agreement with annotations explaining each section in plain English.
 
 ## When This Skill Is Invoked
 
-The user runs `/legal agreement <type>` where `<type>` is one of the supported agreement types. You ask clarifying questions, then generate a full agreement document.
+Use this skill when the user runs `/legal agreement <type>` or asks for a business agreement draft. Ask clarifying questions, then generate a full agreement document.
 
 ---
 

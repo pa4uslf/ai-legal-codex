@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="AI Legal Assistant for Claude Code" width="900"/>
+  <img src="assets/banner.svg" alt="AI Legal Assistant for Codex" width="900"/>
 </p>
 
 <p align="center">
   <strong>AI-powered contract review and legal document generation.</strong> Review contracts, flag risks,<br/>
-  generate NDAs, check compliance, negotiate terms, and produce client-ready PDF reports — all from Claude Code.
+  generate NDAs, check compliance, negotiate terms, and produce client-ready PDF reports — all from Codex.
 </p>
 
 <p align="center">
@@ -29,10 +29,18 @@
 ## Quick Start
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/ai-legal-claude/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/pa4uslf/ai-legal-codex/main/install.sh | bash
 ```
 
-That's it. One command installs all 14 skills, 5 agents, and the PDF generation scripts.
+这会把全部 skill 安装到 `~/.codex/skills`，并把完整审查用的分析框架安装到 `~/.codex/agents`。
+
+也可以本地安装：
+
+```bash
+./install.sh
+```
+
+安装后，重启 Codex 即可生效。
 
 ---
 
@@ -41,7 +49,7 @@ That's it. One command installs all 14 skills, 5 agents, and the PDF generation 
 ### Contract Analysis
 | Command | What It Does |
 |---------|-------------|
-| `/legal review <file>` | **Flagship** — Full contract review with 5 parallel agents. Returns a Contract Safety Score, clause-by-clause analysis, and prioritized recommendations. |
+| `/legal review <file>` | **Flagship** — Full contract review across 5 legal analysis lenses. Returns a Contract Safety Score, clause-by-clause analysis, and prioritized recommendations. |
 | `/legal risks <file>` | Deep risk analysis with severity scoring for every clause. Estimates financial exposure. |
 | `/legal compare <file1> <file2>` | Side-by-side comparison of two contract versions. Flags additions, removals, and dangerous changes. |
 | `/legal plain <file>` | Translates every clause from legalese into plain English anyone can understand. |
@@ -84,9 +92,9 @@ The most powerful command. Run it on any contract and get:
 /legal review my-contract.pdf
 ```
 
-5 AI agents launch in parallel:
+Codex 版会默认按 5 个分析视角完成完整审查；如果你的宿主环境明确允许并行子代理，也可以把这 5 个视角并行执行：
 
-| Agent | Role | Weight |
+| Analysis Lens | Role | Weight |
 |-------|------|--------|
 | Clause Analyst | Identifies and categorizes every clause | 20% |
 | Risk Assessor | Scores each clause for risk | 25% |
@@ -127,7 +135,7 @@ ai-legal-claude/
 ├── legal/
 │   └── SKILL.md                    # Main orchestrator (command router)
 ├── skills/
-│   ├── legal-review/SKILL.md       # Full contract review (5 agents)
+│   ├── legal-review/SKILL.md       # Full contract review (5 review lenses)
 │   ├── legal-risks/SKILL.md        # Deep risk analysis
 │   ├── legal-compare/SKILL.md      # Contract comparison
 │   ├── legal-plain/SKILL.md        # Plain English translation
@@ -141,11 +149,11 @@ ai-legal-claude/
 │   ├── legal-freelancer/SKILL.md   # Freelancer contract review
 │   └── legal-report-pdf/SKILL.md   # PDF report generator
 ├── agents/
-│   ├── legal-clauses.md            # Clause analysis agent
-│   ├── legal-risks.md              # Risk assessment agent
-│   ├── legal-compliance.md         # Compliance check agent
-│   ├── legal-terms.md              # Terms & obligations agent
-│   └── legal-recommendations.md    # Recommendations agent
+│   ├── legal-clauses.md            # Clause analysis framework
+│   ├── legal-risks.md              # Risk assessment framework
+│   ├── legal-compliance.md         # Compliance check framework
+│   ├── legal-terms.md              # Terms & obligations framework
+│   └── legal-recommendations.md    # Recommendations framework
 ├── scripts/
 │   └── generate_legal_pdf.py       # PDF generation (ReportLab)
 ├── templates/
@@ -159,7 +167,7 @@ ai-legal-claude/
 
 ## Requirements
 
-- **Claude Code** (with an active Anthropic API key)
+- **Codex**
 - **Python 3.8+** (for PDF generation only)
 - **reportlab** — `pip3 install reportlab` (for PDF generation only)
 
@@ -168,7 +176,7 @@ ai-legal-claude/
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/ai-legal-claude/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/pa4uslf/ai-legal-codex/main/uninstall.sh | bash
 ```
 
 Or run locally:
@@ -186,12 +194,12 @@ This tool is for educational and informational purposes only. It does **not** pr
 ---
 
 <p align="center">
-  <strong>Part of the Claude Code Skills Series</strong><br>
+  <strong>Part of the Codex Skills Series</strong><br>
   <a href="https://github.com/zubair-trabzada/ai-marketing-claude">AI Marketing Suite</a> ·
   <a href="https://github.com/zubair-trabzada/ai-sales-team-claude">AI Sales Team</a> ·
   <strong>AI Legal Assistant</strong>
 </p>
 
 <p align="center">
-  <a href="https://www.skool.com/aiworkshop">🎓 Learn How to Sell Claude Code Services to Real Businesses</a>
+  <a href="https://www.skool.com/aiworkshop">🎓 Learn How to Sell Codex Services to Real Businesses</a>
 </p>
