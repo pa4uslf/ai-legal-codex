@@ -86,7 +86,7 @@ Each lens receives:
 ```
 Launch each delegated reviewer with this prompt structure:
 
-"You are the [Agent Role] subagent for the AI Legal Assistant.
+"You are the [Agent Role] subagent for AI Legal Codex.
 Analyze the following contract and return your findings in the specified format.
 
 CONTRACT TYPE: [detected type]

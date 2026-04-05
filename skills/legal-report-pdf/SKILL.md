@@ -332,7 +332,7 @@ creators of this tool accept no liability for actions taken based
 on this analysis.
 
 Generated: [date and time]
-Tool: AI Legal Assistant — Codex
+Tool: AI Legal Codex
 ```
 
 ### 3.13 Page Footer (All Pages Except Cover)
@@ -340,7 +340,7 @@ Tool: AI Legal Assistant — Codex
 Every page after the cover should have:
 
 ```
-[Left: "AI Legal Assistant — Contract Review Report"]
+[Left: "AI Legal Codex — Contract Review Report"]
 [Center: "CONFIDENTIAL"]
 [Right: "Page X of Y"]
 ```

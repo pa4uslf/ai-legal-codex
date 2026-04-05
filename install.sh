@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# AI Legal Assistant — Codex Skills Installer
+# AI Legal Codex — Skills Installer
 # 14 Skills · 5 Analysis Frameworks · PDF Reports
 # ============================================================================
 set -euo pipefail
@@ -16,7 +16,7 @@ NC='\033[0m'
 echo ""
 echo -e "${BLUE}╔══════════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║                                                              ║${NC}"
-echo -e "${BLUE}║${NC}   ${CYAN}AI Legal Assistant — Codex Skills${NC}                         ${BLUE}║${NC}"
+echo -e "${BLUE}║${NC}   ${CYAN}AI Legal Codex — Skills${NC}                                   ${BLUE}║${NC}"
 echo -e "${BLUE}║${NC}   ${GREEN}14 Skills · 5 Analysis Frameworks · PDF Reports${NC}          ${BLUE}║${NC}"
 echo -e "${BLUE}║                                                              ║${NC}"
 echo -e "${BLUE}╚══════════════════════════════════════════════════════════════╝${NC}"

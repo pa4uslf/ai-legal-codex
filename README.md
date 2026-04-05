@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="AI Legal Assistant for Codex" width="900"/>
+  <img src="assets/banner.svg" alt="AI Legal Codex" width="900"/>
 </p>
+
+# AI Legal Codex
 
 <p align="center">
   <strong>AI-powered contract review and legal document generation.</strong> Review contracts, flag risks,<br/>
@@ -249,7 +251,7 @@ Do not rely on AI-generated output as your final legal position in employment, f
   <strong>Part of the Codex Skills Series</strong><br>
   <a href="https://github.com/zubair-trabzada/ai-marketing-claude">AI Marketing Suite</a> ·
   <a href="https://github.com/zubair-trabzada/ai-sales-team-claude">AI Sales Team</a> ·
-  <strong>AI Legal Assistant</strong>
+  <strong>AI Legal Codex</strong>
 </p>
 
 <p align="center">

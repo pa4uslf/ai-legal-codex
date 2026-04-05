@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# AI Legal Assistant — Uninstaller
+# AI Legal Codex — Uninstaller
 # ============================================================================
 set -euo pipefail
 
@@ -15,7 +15,7 @@ SKILLS_DIR="$CODEX_HOME/skills"
 AGENTS_DIR="$CODEX_HOME/agents"
 
 echo ""
-echo -e "${BLUE}Uninstalling AI Legal Assistant...${NC}"
+echo -e "${BLUE}Uninstalling AI Legal Codex...${NC}"
 echo ""
 
 # Remove skills
@@ -39,6 +39,6 @@ for agent in "${AGENTS[@]}"; do
 done
 
 echo ""
-echo -e "${GREEN}Uninstall complete.${NC} All AI Legal Assistant skills and analysis frameworks have been removed."
+echo -e "${GREEN}Uninstall complete.${NC} All AI Legal Codex skills and analysis frameworks have been removed."
 echo -e "Your Codex installation is otherwise unchanged."
 echo ""
