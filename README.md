@@ -35,7 +35,9 @@
 ## Quick Start
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/pa4uslf/ai-legal-codex/main/install.sh | bash
+git clone https://github.com/pa4uslf/ai-legal-codex.git
+cd ai-legal-codex
+./install.sh
 ```
 
 This installs all skills into `~/.codex/skills` and the full-review analysis frameworks into `~/.codex/agents`.
@@ -228,7 +230,9 @@ ai-legal-codex/
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/pa4uslf/ai-legal-codex/main/uninstall.sh | bash
+git clone https://github.com/pa4uslf/ai-legal-codex.git
+cd ai-legal-codex
+./uninstall.sh
 ```
 
 Or run locally:
