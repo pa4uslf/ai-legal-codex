@@ -38,7 +38,7 @@
 curl -fsSL https://raw.githubusercontent.com/pa4uslf/ai-legal-codex/main/install.sh | bash
 ```
 
-This installs all skills into `~/.codex/skills` and the full-review analysis frameworks into `~/.codex/agents`.
+This installs all skills into `~/.codex/skills` and keeps the full-review analysis frameworks bundled under `~/.codex/skills/legal-review/agents`.
 
 You can also install locally:
 
@@ -154,7 +154,7 @@ This repository is tuned specifically for Codex:
 - Installation targets `~/.codex/skills`
 - The PDF script and template are bundled with `legal-report-pdf`
 - Full contract review runs as 5 analysis lenses by default, without requiring parallel sub-agents
-- The README uses natural-language examples instead of relying on slash-command conventions
+- The README uses natural-language examples as the primary Codex entrypoint
 
 ---
 
@@ -225,6 +225,19 @@ ai-legal-codex/
 
 ---
 
+## Maintainer Checks
+
+Before publishing changes, run:
+
+```bash
+python3 scripts/check_codex_readiness.py
+CODEX_HOME=/tmp/ai-legal-codex-smoke ./install.sh
+```
+
+The first command checks that retired provider keywords have not been reintroduced. The second command verifies the installer against an isolated Codex home without mutating your real `~/.codex` directory.
+
+---
+
 ## Uninstall
 
 ```bash
@@ -249,8 +262,6 @@ Do not rely on AI-generated output as your final legal position in employment, f
 
 <p align="center">
   <strong>Part of the Codex Skills Series</strong><br>
-  <a href="https://github.com/zubair-trabzada/ai-marketing-claude">AI Marketing Suite</a> ·
-  <a href="https://github.com/zubair-trabzada/ai-sales-team-claude">AI Sales Team</a> ·
   <strong>AI Legal Codex</strong>
 </p>
 
