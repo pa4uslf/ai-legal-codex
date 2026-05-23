@@ -57,7 +57,6 @@ fi
 # ---------------------------------------------------------------------------
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 SKILLS_DIR="$CODEX_HOME/skills"
-AGENTS_DIR="$CODEX_HOME/agents"
 
 # ---------------------------------------------------------------------------
 # Check for Codex
@@ -75,9 +74,6 @@ fi
 echo -e "${BLUE}Creating directories...${NC}"
 mkdir -p "$SKILLS_DIR"
 echo -e "  ${GREEN}✓${NC} Skills directory ready"
-
-mkdir -p "$AGENTS_DIR"
-echo -e "  ${GREEN}✓${NC} Analysis framework directory ready"
 
 # ---------------------------------------------------------------------------
 # Install main skill orchestrator
@@ -141,7 +137,6 @@ for agent in "${AGENTS[@]}"; do
     if [ -f "$SOURCE_DIR/agents/$agent.md" ]; then
         mkdir -p "$SKILLS_DIR/legal-review/agents"
         cp "$SOURCE_DIR/agents/$agent.md" "$SKILLS_DIR/legal-review/agents/$agent.md"
-        cp "$SOURCE_DIR/agents/$agent.md" "$AGENTS_DIR/$agent.md"
         echo -e "  ${GREEN}✓${NC} $agent"
         AGENT_COUNT=$((AGENT_COUNT + 1))
     else
@@ -156,13 +151,14 @@ echo -e "${BLUE}Installing scripts...${NC}"
 
 SCRIPT_COUNT=0
 mkdir -p "$SKILLS_DIR/legal-report-pdf/scripts"
-for script in "$SOURCE_DIR"/scripts/*.py; do
-    if [ -f "$script" ]; then
-        cp "$script" "$SKILLS_DIR/legal-report-pdf/scripts/"
-        echo -e "  ${GREEN}✓${NC} $(basename "$script")"
-        SCRIPT_COUNT=$((SCRIPT_COUNT + 1))
-    fi
-done
+PDF_SCRIPT="$SOURCE_DIR/scripts/generate_legal_pdf.py"
+if [ -f "$PDF_SCRIPT" ]; then
+    cp "$PDF_SCRIPT" "$SKILLS_DIR/legal-report-pdf/scripts/"
+    echo -e "  ${GREEN}✓${NC} $(basename "$PDF_SCRIPT")"
+    SCRIPT_COUNT=$((SCRIPT_COUNT + 1))
+else
+    echo -e "  ${YELLOW}⚠${NC} generate_legal_pdf.py (not found in source)"
+fi
 
 # ---------------------------------------------------------------------------
 # Install templates
@@ -215,7 +211,7 @@ echo -e "${GREEN}║  Installation Complete!                                    
 echo -e "${GREEN}╚══════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 echo -e "  ${CYAN}Skills:${NC}    $INSTALL_COUNT installed  →  $SKILLS_DIR"
-echo -e "  ${CYAN}Frameworks:${NC} $AGENT_COUNT installed  →  $AGENTS_DIR"
+echo -e "  ${CYAN}Frameworks:${NC} $AGENT_COUNT installed  →  $SKILLS_DIR/legal-review/agents"
 echo -e "  ${CYAN}Scripts:${NC}   $SCRIPT_COUNT installed  →  $SKILLS_DIR/legal-report-pdf/scripts"
 echo -e "  ${CYAN}Templates:${NC} $TEMPLATE_COUNT installed  →  $SKILLS_DIR/legal-report-pdf/templates"
 echo ""

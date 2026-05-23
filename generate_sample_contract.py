@@ -9,7 +9,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib import colors
 import os
 
-OUTPUT_PATH = "/Users/zubair/Documents/Claude Code/ai-legal-claude/sample-contract.pdf"
+OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "sample-contract.pdf")
 
 def build_contract():
     doc = SimpleDocTemplate(
